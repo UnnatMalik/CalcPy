@@ -1,6 +1,56 @@
 import flet as ft 
+def build(page : ft.Page):
+    result = ft.Text("0",size=20)
+    page.add(
+        
+        ft.Container(
+            width=1000,
+            bgcolor="black",
+            border_radius=ft.border_radius.all(20),
+            padding=20,
+            content= ft.Column(
+                controls=[
+                ft.Row(controls= [result],alignment="end"),
+                ft.Row(controls=[
+                    ft.IconButton(icon=ft.icons.HISTORY,icon_color="Grey",expand=1,),
+                    ft.IconButton(icon=ft.icons.LINEAR_SCALE,icon_color="Grey",expand=1),
+                    ft.IconButton(icon=ft.icons.CALCULATE,icon_color="Grey",expand=1),
+                    ]),
+                    ft.Row(controls=[
+                    ft.ElevatedButton(text="C",color="Red",bgcolor="DarkGrey",expand=1,data="C"),
+                    ft.ElevatedButton(text="()",color="Green",bgcolor="DarkGrey",expand=1,data="()"),
+                    ft.ElevatedButton(text="%",color="Green",bgcolor="DarkGrey",expand=1,data="%"),
+                    ft.ElevatedButton(text="/",color="Green",bgcolor="DarkGrey",expand=1,data="/"),
+                    ]),
+                    ft.Row(controls=[
+                        ft.ElevatedButton(text="7",color="white",bgcolor="Black",expand=1,),
+                        ft.ElevatedButton(text="8",color="white",bgcolor="Black",expand=1,),
+                        ft.ElevatedButton(text="9",color="white",bgcolor="Black",expand=1,),
+                        ft.ElevatedButton(text="*",color="Green",bgcolor="DarkGrey",expand=1,),
+                    ]),
+                    ft.Row(controls=[
+                        ft.ElevatedButton(text="4",color="white",bgcolor="Black",expand=1,),
+                        ft.ElevatedButton(text="5",color="white",bgcolor="Black",expand=1,),
+                        ft.ElevatedButton(text="6",color="white",bgcolor="Black",expand=1,),
+                        ft.ElevatedButton(text="-",color="Green",bgcolor="DarkGrey",expand=1,)
+                        ]),
+                    ft.Row(controls=[
+                        ft.ElevatedButton(text="1",color="white",bgcolor="black",expand=1,),
+                        ft.ElevatedButton(text="2",color="white",bgcolor="black",expand=1,),
+                        ft.ElevatedButton(text="3",color="White",bgcolor="Black",expand=1,),
+                        ft.ElevatedButton(text="+",color="Green",bgcolor="DarkGrey",expand=1,)
+                    ]),
+                    ft.Row(controls=[
+                        ft.ElevatedButton(text="+/-",color="white",bgcolor="black",expand=1,),
+                        ft.ElevatedButton(text="0",color="white",bgcolor="black",expand=1,),
+                        ft.ElevatedButton(text=".",color="white",bgcolor="black",expand=1,),
+                        ft.ElevatedButton(text="=",color="white",bgcolor="Green",expand=1,)
+                    ])
+                    ]
+                )
+        )
+    )
+    
+    
+ft.app(target=build)
 
-def main(page : ft.Page):
-    page.title = "Calculator Python"
-    ft.TextField(label="Calculator ",)
-ft.app(main)
