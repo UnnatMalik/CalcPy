@@ -12,6 +12,12 @@ def build(page : ft.Page):
                         result.update()
                     except:
                         result.value = "Error"
+                elif e.control.text == '+/-':
+                    result.value = f"-{result.value}"
+                    result.update()
+                elif e.control.text == '()':
+                    result.value = f"({result.value})"
+                    result.update()
                 else:
                     result.value += e.control.text
                     result.update()
