@@ -6,6 +6,9 @@ def build(page : ft.Page):
                 if e.control.text == 'C':
                     result.value = ""
                     result.update()
+                elif result.value == '0':
+                    result.value = e.control.text
+                    result.update()
                 elif e.control.text == '=':
                     try:
                         result.value = str(eval(result.value))
