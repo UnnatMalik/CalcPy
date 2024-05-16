@@ -3,12 +3,15 @@ import flet as ft
 def build(page : ft.Page):
         result = ft.Text("0",size=20)
         def button_click(e):
+            
                 if e.control.text == 'C':
                     result.value = ""
                     result.update()
+                    
                 elif result.value == '0':
                     result.value = e.control.text
                     result.update()
+                    
                 elif e.control.text == '=':
                     try:
                         result.value = str(eval(result.value))
@@ -16,15 +19,19 @@ def build(page : ft.Page):
                     except:
                         result.value = "Error"
                         result.update()
+                        
                 elif e.control.text == '+/-':
                     result.value = f"-{result.value}"
                     result.update()
+                    
                 elif e.control.text == '()':
                     result.value = f"({result.value})"
                     result.update()
+                    
                 else:
                     result.value += e.control.text
                     result.update()
+                    
         page.add(
         ft.Container(
             width=1000,
